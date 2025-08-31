@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In / Sign Up</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #d6e85c;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+      background: #fff;
+      border-radius: 15px;
+      overflow: hidden;
+      display: flex;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .form-container {
+      flex: 1;
+      padding: 40px;
+    }
+
+    .form-container h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .form-container input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    .form-container button {
+      width: 100%;
+      padding: 12px;
+      background: #9dc209;
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .form-container button:hover {
+      background: #7ea000;
+    }
+
+    .side {
+      flex: 1;
+      background: #9dc209;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px;
+    }
+
+    .side h2 {
+      margin-bottom: 15px;
+    }
+
+    @media(max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      .side {
+        order: -1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Sign In -->
+    <div class="form-container">
+      <h2>Sign In</h2>
+      <form>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">Sign In</button>
+      </form>
+    </div>
+
+    <!-- Right Side -->
+    <div class="side">
+      <h2>New Here?</h2>
+      <p>Create an account to join us!</p>
+      <button onclick="toggleForms()">Sign Up</button>
+    </div>
+  </div>
+
+  <script>
+    function toggleForms() {
+      document.querySelector(".form-container h2").innerText = 
+        document.querySelector(".form-container h2").innerText === "Sign In" ? "Sign Up" : "Sign In";
+
+      document.querySelector(".form-container form").innerHTML = 
+        document.querySelector(".form-container h2").innerText === "Sign Up"
+        ? `<input type="text" placeholder="Full Name" required>
+           <input type="email" placeholder="Email" required>
+           <input type="password" placeholder="Password" required>
+           <button type="submit">Sign Up</button>`
+        : `<input type="email" placeholder="Email" required>
+           <input type="password" placeholder="Password" required>
+           <button type="submit">Sign In</button>`;
+    }
+  </script>
+</body>
+</html>
