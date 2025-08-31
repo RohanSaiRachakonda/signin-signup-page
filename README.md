@@ -1,6 +1,6 @@
 # Sign In / Sign Up Page
 
-This repository contains a responsive **Sign In and Sign Up page** built using **HTML, CSS, and JavaScript**.  
+This repository contains a responsive **Sign In and Sign Up page** built using **HTML, AND CSS**.  
 It was developed as part of a frontend task for practice.
 
 ## 🚀 Features
@@ -16,7 +16,6 @@ It was developed as part of a frontend task for practice.
 ## 🛠️ Technologies Used
 - HTML5  
 - CSS3  
-- JavaScript  
 
 ## 📂 Project Structure
 
